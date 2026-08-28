@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { href: "#home", label: "home" },
   { href: "#projects", label: "projects" },
   { href: "#work", label: "work" },
-  { href: "#personal", label: "personal" },
 ];
 
 export function NavBar() {

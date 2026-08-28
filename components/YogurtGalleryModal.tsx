@@ -114,7 +114,7 @@ export function YogurtGalleryModal() {
         <Dialog.Overlay className="fixed inset-0 z-[60] bg-background/70 backdrop-blur-lg" />
         <Dialog.Content className="fixed top-1/2 left-1/2 z-[60] max-h-[85vh] w-[calc(100%-3rem)] max-w-3xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl bg-background p-6 shadow-lg focus:outline-none sm:p-8">
           <Dialog.Title className="text-sm tracking-widest text-muted-foreground uppercase">
-            Yogurt Bowls
+            Some of My Yogurt Bowls
           </Dialog.Title>
           <Dialog.Description className="sr-only">
             A gallery of yogurt bowl photos, swipeable or navigable with arrow keys.
@@ -129,7 +129,6 @@ export function YogurtGalleryModal() {
               <LuX size={16} aria-hidden="true" />
             </button>
           </Dialog.Close>
-
           <div className="mt-6">
             <div
               ref={emblaRef}

@@ -1,6 +1,5 @@
 import { HomeSection } from "@/components/HomeSection";
 import { NavBar } from "@/components/NavBar";
-import { PersonalSection } from "@/components/PersonalSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { WorkSection } from "@/components/WorkSection";
 
@@ -12,7 +11,6 @@ export default function Home() {
         <HomeSection />
         <ProjectsSection />
         <WorkSection />
-        <PersonalSection />
       </main>
     </>
   );

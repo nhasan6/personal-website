@@ -46,11 +46,9 @@ export function HomeSection() {
             </span>{" "}
             I like using technology to capture those random ideas that pop into your brain before they become forgotten. 
           </p>
-          {/* <p>
-            more words if necessary
-          </p> */}
+          Add extra words here. 
           <p>
-            Outside of tech, you can catch me preparing Pinterest-perfect{" "}
+            Outside of tech, you can find me preparing Pinterest-perfect{" "}
             <YogurtGalleryModal />
             , tangled up in (or untangling) a sewing project, reading a book,
             or planning my retirement on a blueberry farm.
