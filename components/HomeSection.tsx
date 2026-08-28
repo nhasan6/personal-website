@@ -36,19 +36,31 @@ export function HomeSection() {
 
         <div className="flex flex-col gap-4 text-sm leading-relaxed text-foreground/90 sm:text-base">
           <p>
-            I'm a 2A{" "}
+            I'm a 2nd year{" "}
             <span className="font-semibold text-primary">
             Software Engineering
             </span>{" "}
-            student at{" "}
+            student at the{" "}
             <span className="font-semibold text-primary">
-              The University of Waterloo.
+            University of Waterloo.
             </span>{" "}
-            I like using technology to capture those random ideas that pop into your brain before they become forgotten. 
+            I like using technology to create useful things.  
           </p>
-          Add extra words here. 
           <p>
-            Outside of tech, you can find me preparing Pinterest-perfect{" "}
+          As an experienced crafter, I see code as another creative medium for transforming ideas into reality. Whether it’s stitching together 
+          pieces of fabric or lines of code, I find a sense of satisfaction and accomplishment in the creative process of starting with an inspiration and 
+          seeing it develop into a finished product. I’m currently exploring{" "}
+          <span className="font-semibold text-primary">
+            software development
+          </span>{" "}
+          and{" "}
+          <span className="font-semibold text-primary">
+           data science
+          </span>
+          , and am always looking for new things to build, learn, and experiment with.  
+          </p>
+          <p>
+          In my free time, you can find me preparing Pinterest-perfect{" "}
             <YogurtGalleryModal />
             , tangled up in (or untangling) a sewing project, reading a book,
             or planning my retirement on a blueberry farm.
