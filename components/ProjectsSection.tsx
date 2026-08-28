@@ -12,7 +12,7 @@ type ProjectEntry = {
 
 const PROJECTS: ProjectEntry[] = [
   {
-    emoji: "📖",
+    emoji: "🔗",
     title: "Connections",
     description:
       "An interactive vocabulary graph that visualizes connections between words based on semantic similarity and shared origin context.",

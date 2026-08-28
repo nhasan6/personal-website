@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Quicksand, Alkatra } from "next/font/google";
+import { Quicksand, Lora } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -8,10 +8,11 @@ const quicksand = Quicksand({
   subsets: ["latin"],
 });
 
-const alkatra = Alkatra({
-  variable: "--font-alkatra",
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
-  weight: ["500"],
+  weight: ["700"],
+  style: ["italic"],
 });
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${quicksand.variable} ${alkatra.variable} h-full scroll-smooth antialiased`}
+      className={`${quicksand.variable} ${lora.variable} h-full scroll-smooth antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">

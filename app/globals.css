@@ -25,7 +25,7 @@
   --color-muted: var(--color-muted);
   --color-muted-foreground: var(--color-muted-foreground);
   --font-sans: var(--font-quicksand);
-  --font-heading: var(--font-alkatra);
+  --font-heading: var(--font-lora);
 }
 
 body {

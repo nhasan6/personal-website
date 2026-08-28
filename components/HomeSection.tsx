@@ -30,7 +30,7 @@ export function HomeSection() {
       className="relative isolate flex min-h-[90vh] flex-col justify-center overflow-hidden px-6 pt-4 pb-0"
     >
       <div className="relative z-10 mx-auto flex w-full max-w-[640px] flex-col gap-8">
-        <h1 className="font-heading text-5xl font-bold text-primary sm:text-6xl md:text-7xl">
+        <h1 className="font-heading text-3xl font-bold italic text-primary sm:text-4xl md:text-5xl">
           <TypingText text="Hi, I'm Neeya" />
         </h1>
 
