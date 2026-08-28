@@ -1,62 +1,66 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
 import * as Dialog from "@radix-ui/react-dialog";
 import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { LuChevronLeft, LuChevronRight, LuX } from "react-icons/lu";
 
 type PhotoSlide = {
-  emoji: string;
+  src: string;
   alt: string;
   caption: string;
-  bg: string;
   width: string;
+  /** CSS object-position for the cropped image, e.g. "center", "50% 30%", "top". */
+  position?: string;
+  /** Extra zoom on top of the cover crop, centered. 1 = none, 1.15 = 15% closer. */
+  scale?: number;
 };
 
 const YOGURT_PHOTOS: PhotoSlide[] = [
   {
-    emoji: "🍯",
-    alt: "Photo placeholder showing a honey drizzle on a warm cream background, representing a honey-topped yogurt bowl.",
-    caption: "Golden honey drizzle, because a yogurt bowl isn't done without it.",
-    bg: "#f0e2c4",
-    width: "w-[260px]",
+    src: "/yogurt_bowls/IMG_5624.jpg",
+    alt: "A yogurt bowl topped with fresh fruit, granola, and almond butter drizzle.",
+    caption: "Picasso, if his canvas were a plate.",
+    width: "w-[270px]",
+    position: "center",
+  },
+    {
+    src: "/yogurt_bowls/IMG_9003.jpg",
+    alt: "Overnight oats with almond butter drizzle and a wooden spoon.",
+    caption: "Technically overnight oats, but no one is keeping track.",
+    width: "w-[200px]",
+    position: "center",
   },
   {
-    emoji: "🍓",
-    alt: "Photo placeholder showing strawberries on a soft pink background, representing a strawberry yogurt bowl.",
-    caption: "Strawberries stacked just right for the photo, eaten immediately after.",
-    bg: "#f2c9cf",
-    width: "w-[300px]",
+    src: "/yogurt_bowls/IMG_2B91EF1D0C51-1.jpeg",
+    alt: "A yogurt bowl with granola, berries, and honey.",
+    caption: "With a thick layer of Ontario farm honey",
+    width: "w-[250px]",
+    position: "center",
   },
   {
-    emoji: "🥣",
-    alt: "Photo placeholder showing a bowl on a cream background, representing the base yogurt bowl.",
-    caption: "The blank canvas: plain yogurt, ready for toppings.",
-    bg: "#ede6d8",
-    width: "w-[220px]",
+    src: "/yogurt_bowls/IMG_5358.jpg",
+    alt: "A finished smoothie bowl with bananas granola.",
+    caption: "The patience required to make and photograph this one in the morning is award worthy!",
+    width: "w-[200px]",
+    position: "center 62%",
   },
   {
-    emoji: "🫐",
-    alt: "Photo placeholder showing blueberries on a pale blue background, representing a blueberry yogurt bowl.",
-    caption: "Blueberries make an appearance here too, obviously.",
-    bg: "#c3d3f2",
-    width: "w-[260px]",
+    src: "/yogurt_bowls/IMG_6820.jpg",
+    alt: "A yogurt bowl with bananas, blueberries, strawberries, and granola on a white background.",
+    caption: "Ft: dried strawberry granola!",
+    width: "w-[250px]",
+    position: "center 42%",
   },
   {
-    emoji: "🥜",
-    alt: "Photo placeholder showing granola and nuts on a tan background, representing granola toppings.",
-    caption: "Extra granola for crunch, no exceptions.",
-    bg: "#d9c7a8",
-    width: "w-[280px]",
-  },
-  {
-    emoji: "🍌",
-    alt: "Photo placeholder showing banana slices on a pale yellow background, representing banana toppings.",
-    caption: "Banana slices arranged with far too much care.",
-    bg: "#f2e6b8",
-    width: "w-[240px]",
-  },
+    src: "/yogurt_bowls/IMG_0925AF801DB7-1.jpeg",
+    alt: "A yogurt bowl with bananas, strawberries, blueberries, and potentially too much hemp hearts.",
+    caption: "A chaotic amount of hemp hearts.",
+    width: "w-[200px]",
+    position: "center",
+  }
 ];
 
 export function YogurtGalleryModal() {
@@ -139,18 +143,23 @@ export function YogurtGalleryModal() {
               <div className="flex gap-4 px-1 py-1 sm:gap-5">
                 {YOGURT_PHOTOS.map((photo, index) => (
                   <figure
-                    key={photo.alt}
+                    key={photo.src}
                     aria-roledescription="slide"
                     aria-label={`${index + 1} of ${YOGURT_PHOTOS.length}`}
                     className={`flex shrink-0 flex-col gap-2 ${photo.width}`}
                   >
-                    <div
-                      role="img"
-                      aria-label={photo.alt}
-                      className="flex h-56 items-center justify-center rounded-2xl text-6xl shadow-sm sm:h-64"
-                      style={{ backgroundColor: photo.bg }}
-                    >
-                      <span aria-hidden="true">{photo.emoji}</span>
+                    <div className="relative h-56 overflow-hidden rounded-2xl shadow-sm sm:h-64">
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        sizes="(max-width: 640px) 80vw, 320px"
+                        className="object-cover"
+                        style={{
+                          objectPosition: photo.position ?? "center",
+                          transform: photo.scale ? `scale(${photo.scale})` : undefined,
+                        }}
+                      />
                     </div>
                     <figcaption className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
                       {photo.caption}
