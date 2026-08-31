@@ -14,7 +14,7 @@ const SOCIAL_LINKS = [
     Icon: LuMail,
     variant: "primary" as const,
   },
-  { label: "resume", href: "/public/files/resume.pdf", Icon: LuArrowUpRight, variant: "secondary" as const },
+  { label: "resume", href: "/files/resume.pdf", Icon: LuArrowUpRight, variant: "secondary" as const },
 ];
 
 const PILL_STYLES = {
